@@ -329,7 +329,7 @@ vmap l <right>
 imap <c-l> <right>
 cmap <c-l> <right>
 " ESC button
-imap jj <Esc><right>
+imap jj <Esc>
 " arrows
 nmap <down> gj
 nmap <up> gk
