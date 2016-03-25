@@ -482,6 +482,7 @@ au BufRead,BufNewFile *.scss set filetype=scss
 au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.slim set filetype=slim
 au BufNewFile,BufRead *.json set filetype=json
+au BufNewFile,BufRead *.jade.erb set filetype=pug
 
 "au BufNewFile,BufRead *.rb set makeprg=ruby\ -c\ %
 au BufNewFile,BufRead *.ass,*.ssa set filetype=ssa
