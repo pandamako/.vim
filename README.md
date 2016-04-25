@@ -28,6 +28,16 @@ Clone this repo into your home directory either as .vim (linux) or vimfiles (win
 Then cd into the repo and run this to get all plugins installed: 
 `./update_bundles`
 
+## Build Command-T
+
+```
+rvm use system
+bundle
+ruby extconf.rb
+make clean
+make
+```
+
 
 Put this code into your ~/.vimrc along with your personal hacks:
 
