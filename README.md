@@ -31,6 +31,7 @@ Then cd into the repo and run this to get all plugins installed:
 ## Build Command-T
 
 ```
+cd ~/.vim/bundle/Command-T/ruby/command-t
 rvm use system
 bundle
 ruby extconf.rb
