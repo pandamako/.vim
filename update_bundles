@@ -28,6 +28,7 @@ git_bundles = %w[
   sjbach/lusty
   rking/ag.vim
   digitaltoad/vim-pug
+  elixir-lang/vim-elixir
 ]
 #vim-scripts/vimgrep.vim
 #majutsushi/tagbar
