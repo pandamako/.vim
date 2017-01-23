@@ -30,6 +30,7 @@ git_bundles = %w[
   digitaltoad/vim-pug
   elixir-lang/vim-elixir
   mustache/vim-mustache-handlebars
+  yalesov/vim-emblem
 ]
 #vim-scripts/vimgrep.vim
 #majutsushi/tagbar
