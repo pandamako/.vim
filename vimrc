@@ -1,3 +1,5 @@
+scriptencoding utf-8
+set encoding=utf-8
 "-----------------------------------------------------------------------------
 " pathogen
 "-----------------------------------------------------------------------------
@@ -58,7 +60,7 @@ set laststatus=2
 let g:CommandTMatchWindowReverse = 0
 let g:CommandTMaxHeight = 17
 let g:CommandTMaxFiles = 25000
-let g:CommandTWildIgnore = &wildignore."*.o,*.obj,.git,.svn,*.log,public/uploads/**,public/system/**,public/images/**,tmp/cache/**,public/assets/**,tmp/sass-cache/**,tmp/pages/**,tmp/cache/**,test/pages/**,spec/pages/**,_build/**,node_modules/**"
+let g:CommandTWildIgnore = &wildignore."*.o,*.obj,.git,.svn,*.log,public/uploads/**,public/system/**,public/images/**,tmp/cache/**,public/assets/**,tmp/sass-cache/**,tmp/pages/**,tmp/cache/**,test/pages/**,spec/pages/**,_build/**,node_modules/**,bower_components/**,*/node_modules/**,*/bower_components/**"
 
 nmap <silent> <leader>t :CommandT<cr>
 nmap <silent> <leader>r :CommandTFlush<cr>:CommandT<cr>
@@ -95,6 +97,8 @@ map <silent> <leader>n :NERDTreeToggle<cr>
 map <silent> <leader>N :NERDTreeFind<cr>
 nmap <f2> :NERDTreeFind<cr>
 nmap <f3> :NERDTreeToggle<cr>
+
+let g:NERDTreeChDirMode = 2
 
 "-----------------------------------------------------------------------------
 " NerdCommenter
