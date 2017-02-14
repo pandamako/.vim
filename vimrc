@@ -98,8 +98,6 @@ map <silent> <leader>N :NERDTreeFind<cr>
 nmap <f2> :NERDTreeFind<cr>
 nmap <f3> :NERDTreeToggle<cr>
 
-let g:NERDTreeChDirMode = 2
-
 "-----------------------------------------------------------------------------
 " NerdCommenter
 "-----------------------------------------------------------------------------
