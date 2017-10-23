@@ -603,6 +603,11 @@ let g:SessionMgr_DefaultName = "last"
 set completeopt-=preview
 set completeopt+=longest
 
+"-----------------------------------------------------------------------------
+" vim-jsx
+"-----------------------------------------------------------------------------
+let g:jsx_ext_required = 0
+
 " used to make vim default 'man' viewer
 " see http://vim.wikia.com/wiki/Using_vim_as_a_man-page_viewer_under_Unix
 let $PAGER=''

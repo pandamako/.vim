@@ -31,6 +31,8 @@ git_bundles = %w[
   mustache/vim-mustache-handlebars
   yalesov/vim-emblem
   pangloss/vim-javascript
+  mxw/vim-jsx
+  flazz/vim-colorschemes
 ]
 # bling/vim-airline
 #vim-scripts/vimgrep.vim
@@ -77,5 +79,4 @@ rvm_init_script = 'echo \'fff\''
 # rvm_init_script = 'source $HOME/.zshrc && rvm use ruby-2.0.0-p645'
 command_t_build_script = 'bundle && ruby extconf.rb && make'
 # command_t_build_script = 'bundle && make clean && ruby extconf.rb && make'
-puts "zsh -c 'cd #{command_t_path} && #{rvm_init_script} && #{environment} #{command_t_build_script}'"
 puts %x{zsh -c 'cd #{command_t_path} && #{rvm_init_script} && #{environment} #{command_t_build_script}'}
