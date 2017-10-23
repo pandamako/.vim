@@ -31,9 +31,9 @@ git_bundles = %w[
   mustache/vim-mustache-handlebars
   yalesov/vim-emblem
   pangloss/vim-javascript
-  mxw/vim-jsx
   flazz/vim-colorschemes
 ]
+# mxw/vim-jsx
 # bling/vim-airline
 #vim-scripts/vimgrep.vim
 #majutsushi/tagbar
