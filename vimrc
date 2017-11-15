@@ -1,6 +1,39 @@
 scriptencoding utf-8
 set encoding=utf-8
 "-----------------------------------------------------------------------------
+" vim-plug
+"-----------------------------------------------------------------------------
+call plug#begin('~/.vim/plugged')
+Plug 'tap349/Command-T',  { 'do': 'cd ruby/command-t/ext/command-t && source ~/.zshrc && rvm use system && ruby extconf.rb && make' }
+Plug 'keithbsmiley/rspec.vim'
+Plug 'ap/vim-css-color'
+Plug 'bkad/CamelCaseMotion'
+" Plug 'briancollins/vim-jst'
+Plug 'cakebaker/scss-syntax.vim'
+" Plug 'elzr/vim-json'
+Plug 'kchmck/vim-coffee-script'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'slim-template/vim-slim'
+Plug 'sstephenson/eco'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'vim-ruby/vim-ruby'
+" Plug 'vim-scripts/grep.vim'
+Plug 'sjbach/lusty'
+" Plug 'mileszs/ack.vim'
+Plug 'rking/ag.vim'
+Plug 'digitaltoad/vim-pug'
+Plug 'elixir-lang/vim-elixir'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
+Plug 'flazz/vim-colorschemes'
+call plug#end()
+"-----------------------------------------------------------------------------
 " pathogen
 "-----------------------------------------------------------------------------
 filetype off
@@ -23,6 +56,10 @@ set diffopt+=vertical
 "-----------------------------------------------------------------------------
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
+"-----------------------------------------------------------------------------
+" vim-jsx
+"-----------------------------------------------------------------------------
+let g:jsx_ext_required = 0
 "-----------------------------------------------------------------------------
 " syntastic
 "-----------------------------------------------------------------------------
@@ -106,7 +143,7 @@ let NERDSpaceDelims = 1
 "-----------------------------------------------------------------------------
 " Ag
 "-----------------------------------------------------------------------------
-let g:ag_search_ignore = 'log,public,tmp,spec/vcr_cassettes,vendor/'
+let g:ag_search_ignore = 'log,public,tmp,spec/vcr_cassettes,vendor/,node_modules'
 let g:ag_prg="ag --nogroup --nocolor --column "
 let g:ag_qhandler="copen 12"
 map <Leader>/ <esc>:call AgSearch()<cr>
@@ -602,11 +639,6 @@ let g:SessionMgr_DefaultName = "last"
 
 set completeopt-=preview
 set completeopt+=longest
-
-"-----------------------------------------------------------------------------
-" vim-jsx
-"-----------------------------------------------------------------------------
-let g:jsx_ext_required = 0
 
 " used to make vim default 'man' viewer
 " see http://vim.wikia.com/wiki/Using_vim_as_a_man-page_viewer_under_Unix

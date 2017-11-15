@@ -3,7 +3,7 @@ require 'fileutils'
 require 'open-uri'
 
 git_bundles = %w[
-  wincent/Command-T
+  tap349/Command-T
   keithbsmiley/rspec.vim
   ap/vim-css-color
   bkad/CamelCaseMotion
@@ -18,18 +18,15 @@ git_bundles = %w[
   sstephenson/eco
   tpope/vim-endwise
   tpope/vim-fugitive
-  tpope/vim-haml
   tpope/vim-rails
   tpope/vim-surround
   tpope/vim-unimpaired
   vim-ruby/vim-ruby
   vim-scripts/grep.vim
   sjbach/lusty
-  rking/ag.vim
+  mileszs/ack.vim
   digitaltoad/vim-pug
   elixir-lang/vim-elixir
-  mustache/vim-mustache-handlebars
-  yalesov/vim-emblem
   pangloss/vim-javascript
   flazz/vim-colorschemes
 ]
