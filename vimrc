@@ -14,7 +14,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
 Plug 'slim-template/vim-slim'
 Plug 'sstephenson/eco'
 Plug 'tpope/vim-endwise'
@@ -32,6 +32,7 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
 Plug 'flazz/vim-colorschemes'
+Plug 'w0rp/ale'
 call plug#end()
 "-----------------------------------------------------------------------------
 " pathogen
@@ -69,6 +70,8 @@ let g:syntastic_coffee_checkers=['coffee'] ", 'coffeelint'
 let g:syntastic_slim_checkers=['slimrb']
 let g:syntastic_json_checkers=['jsonlint'] " npm install -g jsonlint
 let g:syntastic_sass_checkers=[]
+let g:syntastic_javascript_jsx_checkers=['eslint']
+let g:syntastic_javascript_checkers=['eslint']
 let g:vim_json_syntax_conceal = 0
 let g:syntastic_ruby_mri_exec = 'ruby2.2.2'
 let g:syntastic_ruby_mri_quiet_messages = {
@@ -77,8 +80,8 @@ let g:syntastic_ruby_mri_quiet_messages = {
 \   '\m`*'' interpreted as argument prefix'
 \ ] }
 "\   '\m^shadowing outer local variable',
-"let g:syntastic_enable_signs=1
-"let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_loc_list=1
 
 "-----------------------------------------------------------------------------
 " matchit
@@ -95,6 +98,7 @@ set laststatus=2
 " Command-T
 "-----------------------------------------------------------------------------
 let g:CommandTMatchWindowReverse = 0
+let g:CommandTFileScanner = 'git'
 let g:CommandTMaxHeight = 17
 let g:CommandTMaxFiles = 50000
 let g:CommandTWildIgnore = &wildignore."*.o,*.obj,.git,.svn,*.log,public/uploads/**,public/system/**,public/images/**,tmp/cache/**,public/assets/**,tmp/sass-cache/**,tmp/pages/**,tmp/cache/**,test/pages/**,spec/pages/**,*/_build,*/node_modules,*/bower_components"
@@ -172,6 +176,51 @@ let g:rails_projections = {
 \     'alternate': 'app/admin/{}.rb'
 \   },
 \ }
+
+"-----------------------------------------------------------------------------
+" ale
+"-----------------------------------------------------------------------------
+hi ALEWarningSign guibg=#FDE1FD guifg=#0512FB gui=bold
+hi ALEErrorSign guibg=#F4DBDC guifg=#662529 gui=bold
+
+" only linters from g:ale_linters are enabled
+let g:ale_linters_explicit = 1
+
+" location list is populated by default -
+" this might overwrite the contents of already
+" opened location list (e.g., search results)
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 0
+
+" lightline signs
+" (sign column width is fixed - 2 characters)
+"
+" http://xahlee.info/comp/unicode_arrows.html
+" → ➩ ➤ ➞ ➔ ➯ ➪ ➥
+let g:ale_sign_warning = '→'
+let g:ale_sign_error = '→'
+
+"let g:ale_echo_msg_warning_str = 'W'
+"let g:ale_echo_msg_error_str = 'E'
+" use %severity% to display 'W' or 'E'
+let g:ale_echo_msg_format = '[%linter%] %s'
+
+" https://github.com/w0rp/ale/issues/505
+" to disable g:ale_lint_on_enter, it's necessary
+" to disable g:ale_lint_on_filetype_changed as well
+"let g:ale_lint_on_enter = 0
+"let g:ale_lint_on_filetype_changed = 0
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 'never'
+
+let g:ale_linters = {
+      \   'elixir': ['credo'],
+      \   'javascript': ['eslint', 'flow']
+      \ }
+
+" TODO: https://github.com/w0rp/ale/pull/1271
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 "-----------------------------------------------------------------------------
 " editing
