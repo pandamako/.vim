@@ -26,7 +26,8 @@ Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/grep.vim'
 Plug 'sjbach/lusty'
 " Plug 'mileszs/ack.vim'
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 Plug 'digitaltoad/vim-pug'
 Plug 'elixir-lang/vim-elixir'
 Plug 'pangloss/vim-javascript'
@@ -147,18 +148,25 @@ let NERDSpaceDelims = 1
 "-----------------------------------------------------------------------------
 " Ag
 "-----------------------------------------------------------------------------
-let g:ag_search_ignore = 'log,public,tmp,spec/vcr_cassettes,vendor/,node_modules'
-let g:ag_prg="ag --nogroup --nocolor --column "
-let g:ag_qhandler="copen 12"
-map <Leader>/ <esc>:call AgSearch()<cr>
+" let g:ag_search_ignore = 'log,public,tmp,spec/vcr_cassettes,vendor/,node_modules'
+" let g:ag_prg="ag --nogroup --nocolor --column "
+" let g:ag_qhandler="copen 12"
+" map <Leader>/ <esc>:call AgSearch()<cr>
 
-function! AgSearch()
-  let l:search_phrase=input('Ag ')
-  redraw
-  echo "Ack Searching..."
-  silent execute ':Ag --ignore-dir={'.g:ag_search_ignore.'} '.l:search_phrase
-endfunction
+" function! AgSearch()
+  " let l:search_phrase=input('Ag ')
+  " redraw
+  " echo "Ack Searching..."
+  " silent execute ':Ag --ignore-dir={'.g:ag_search_ignore.'} '.l:search_phrase
+" endfunction
 
+"-----------------------------------------------------------------------------
+" Ack
+"-----------------------------------------------------------------------------
+if executable('ag')
+  let g:ag_search_ignore = 'log,public,tmp,spec/vcr_cassettes,vendor/,node_modules'
+  let g:ackprg = 'ag --vimgrep --ignore-dir={'.g:ag_search_ignore.'}'
+endif
 "-------------------------------------------------------------------------------
 " vim-rails
 "
@@ -326,6 +334,7 @@ set noerrorbells
 "set nocp " option for cppomnicomplete
 set list
 set listchars=tab:>·,trail:·,precedes:#,extends:#,nbsp:·
+set switchbuf=newtab
 
 " allow to use backspace instead of "x"
 set backspace=indent,eol,start whichwrap+=<,>,[,]
