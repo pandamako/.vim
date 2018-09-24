@@ -4,7 +4,7 @@ set encoding=utf-8
 " vim-plug
 "-----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-Plug 'tap349/Command-T',  { 'do': 'cd ruby/command-t/ext/command-t && source ~/.zshrc && rvm use system && ruby extconf.rb && make' }
+Plug 'tap349/Command-T',  { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
 Plug 'keithbsmiley/rspec.vim'
 Plug 'ap/vim-css-color'
 Plug 'bkad/CamelCaseMotion'
