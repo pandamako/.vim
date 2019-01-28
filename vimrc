@@ -579,6 +579,7 @@ endif
 au BufRead,BufNewFile *.scss set filetype=scss
 au BufNewFile,BufRead *.json set filetype=javascript
 au BufNewFile,BufRead *.slim set filetype=slim
+au BufNewFile,BufRead *.slime set filetype=slim
 au BufNewFile,BufRead *.json set filetype=json
 au BufNewFile,BufRead *.jade.erb set filetype=pug
 
