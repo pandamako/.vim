@@ -4,7 +4,8 @@ set encoding=utf-8
 " vim-plug
 "-----------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-Plug 'tap349/Command-T',  { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
+" Plug 'tap349/Command-T',  { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
+Plug 'wincent/command-t',  { 'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make' }
 Plug 'keithbsmiley/rspec.vim'
 Plug 'ap/vim-css-color'
 Plug 'bkad/CamelCaseMotion'
@@ -163,10 +164,11 @@ let NERDSpaceDelims = 1
 "-----------------------------------------------------------------------------
 " Ack
 "-----------------------------------------------------------------------------
-if executable('ag')
-  let g:ag_search_ignore = 'log,public,tmp,spec/vcr_cassettes,vendor/,node_modules'
-  let g:ackprg = 'ag --vimgrep --ignore-dir={'.g:ag_search_ignore.'}'
-endif
+let g:ackprg = 'rg -FS --sort-files --vimgrep'
+" if executable('ag')
+  " let g:ag_search_ignore = 'log,public,tmp,spec/vcr_cassettes,vendor/,node_modules'
+  " let g:ackprg = 'ag --vimgrep --ignore-dir={'.g:ag_search_ignore.'}'
+" endif
 "-------------------------------------------------------------------------------
 " vim-rails
 "
