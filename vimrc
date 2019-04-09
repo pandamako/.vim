@@ -26,7 +26,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/grep.vim'
 Plug 'sjbach/lusty'
-" Plug 'mileszs/ack.vim'
 " Plug 'rking/ag.vim'
 Plug 'mileszs/ack.vim'
 Plug 'digitaltoad/vim-pug'
@@ -175,17 +174,17 @@ let g:ackprg = 'rg -FS --sort-files --vimgrep'
 " example projections: https://gist.github.com/henrik/5676109
 "-------------------------------------------------------------------------------
 
-nmap <F4> :A<CR>
-nmap <Leader><F4> :AV<CR>
+" nmap <F4> :A<CR>
+" nmap <Leader><F4> :AV<CR>
 
-let g:rails_projections = {
-\   'app/admin/*.rb': {
-\     'alternate': 'spec/controllers/admin/{}_controller_spec.rb'
-\   },
-\   'spec/controllers/admin/*_controller_spec.rb': {
-\     'alternate': 'app/admin/{}.rb'
-\   },
-\ }
+" let g:rails_projections = {
+" \   'app/admin/*.rb': {
+" \     'alternate': 'spec/controllers/admin/{}_controller_spec.rb'
+" \   },
+" \   'spec/controllers/admin/*_controller_spec.rb': {
+" \     'alternate': 'app/admin/{}.rb'
+" \   },
+" \ }
 
 "-----------------------------------------------------------------------------
 " ale
