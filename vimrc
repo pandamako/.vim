@@ -313,7 +313,7 @@ set nostartofline
 set whichwrap+=>
 set whichwrap+=<
 let c_comment_strings=1
-set lazyredraw
+" set lazyredraw
 set modeline
 set scrolloff=3
 set sidescrolloff=7
