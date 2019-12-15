@@ -35,6 +35,7 @@ Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
 Plug 'flazz/vim-colorschemes'
 Plug 'w0rp/ale'
 Plug 'flowtype/vim-flow'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 "-----------------------------------------------------------------------------
 " pathogen

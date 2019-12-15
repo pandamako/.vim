@@ -1,0 +1,16 @@
+{
+  "languageserver": {
+    "flow": {
+      "command": "flow",
+      "args": ["lsp"],
+      "filetypes": ["javascript", "javascriptreact"],
+      "initializationOptions": {},
+      "requireRootPattern": true,
+      "settings": {},
+      "rootPatterns": [".flowconfig"]
+    }
+  },
+  "flow.pathToFlow": "/usr/local/bin/flow",
+  "javascript.validate.enable": false,
+  "tsserver.enable": false
+}
