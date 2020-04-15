@@ -12,5 +12,5 @@
   },
   "flow.pathToFlow": "/usr/local/bin/flow",
   "javascript.validate.enable": false,
-  "tsserver.enable": false
+  "tsserver.enable": true
 }

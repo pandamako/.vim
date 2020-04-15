@@ -25,7 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-ruby/vim-ruby'
 " Plug 'vim-scripts/grep.vim'
-Plug 'sjbach/lusty'
+" Plug 'sjbach/lusty'
 " Plug 'rking/ag.vim'
 Plug 'mileszs/ack.vim'
 Plug 'digitaltoad/vim-pug'
@@ -133,14 +133,14 @@ nmap ,<f1>r :CommandTFlush<cr>:CommandT<cr>
 "-----------------------------------------------------------------------------
 " LustyExplorer
 "-----------------------------------------------------------------------------
-nmap <silent> <leader>l :LustyBufferGrep<cr>
-nmap <f4> :LustyBufferGrep<cr>
+" nmap <silent> <leader>l :LustyBufferGrep<cr>
+" nmap <f4> :LustyBufferGrep<cr>
 
-silent! unmap <leader>lf
-silent! unmap <leader>lr
-silent! unmap <leader>lb
-silent! unmap <leader>lg
-silent! unmap <leader>lj
+" silent! unmap <leader>lf
+" silent! unmap <leader>lr
+" silent! unmap <leader>lb
+" silent! unmap <leader>lg
+" silent! unmap <leader>lj
 
 "-----------------------------------------------------------------------------
 " NerdTree
@@ -154,21 +154,6 @@ nmap <f3> :NERDTreeToggle<cr>
 " NerdCommenter
 "-----------------------------------------------------------------------------
 let NERDSpaceDelims = 1
-
-"-----------------------------------------------------------------------------
-" Ag
-"-----------------------------------------------------------------------------
-" let g:ag_search_ignore = 'log,public,tmp,spec/vcr_cassettes,vendor/,node_modules'
-" let g:ag_prg="ag --nogroup --nocolor --column "
-" let g:ag_qhandler="copen 12"
-" map <Leader>/ <esc>:call AgSearch()<cr>
-
-" function! AgSearch()
-  " let l:search_phrase=input('Ag ')
-  " redraw
-  " echo "Ack Searching..."
-  " silent execute ':Ag --ignore-dir={'.g:ag_search_ignore.'} '.l:search_phrase
-" endfunction
 
 "-----------------------------------------------------------------------------
 " Ack
@@ -242,6 +227,63 @@ let g:ale_linters = {
 " nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 " nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+"-----------------------------------------------------------------------------
+" Coc
+"-----------------------------------------------------------------------------
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 "-----------------------------------------------------------------------------
 " highlight not ascii symbols
 "-----------------------------------------------------------------------------
