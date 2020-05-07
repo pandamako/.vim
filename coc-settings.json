@@ -10,7 +10,7 @@
       "rootPatterns": [".flowconfig"]
     }
   },
-  "flow.pathToFlow": "/usr/local/bin/flow",
+  "flow.pathToFlow": "node_modules/.bin/flow",
   "javascript.validate.enable": false,
   "tsserver.enable": true
 }
