@@ -36,6 +36,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'w0rp/ale'
 Plug 'flowtype/vim-flow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 "-----------------------------------------------------------------------------
 " pathogen
@@ -60,6 +61,12 @@ set diffopt+=vertical
 "-----------------------------------------------------------------------------
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
+"-----------------------------------------------------------------------------
+" vim-go
+"-----------------------------------------------------------------------------
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+let g:go_def_mapping_enabled = 0
 "-----------------------------------------------------------------------------
 " vim-flow
 "-----------------------------------------------------------------------------
