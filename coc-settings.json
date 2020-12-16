@@ -12,10 +12,12 @@
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "disableWorkspaceFolders": true,
       "filetypes": ["go"]
     }
   },
   "flow.pathToFlow": "node_modules/.bin/flow",
   "javascript.validate.enable": false,
-  "tsserver.enable": true
+  "tsserver.enable": true,
+  "go.goplsPath": "~/.go/bin/gopls"
 }
