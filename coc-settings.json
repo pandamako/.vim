@@ -19,5 +19,10 @@
   "flow.pathToFlow": "node_modules/.bin/flow",
   "javascript.validate.enable": false,
   "tsserver.enable": true,
-  "go.goplsPath": "/Users/artembykov/.go/bin/gopls"
+  "go.goplsPath": "/Users/artembykov/.go/bin/gopls",
+  "go.goplsArgs": ["-remote=auto", "-logfile", "/tmp/gopls.log"],
+  "go.goplsOptions": {
+    "completeUnimported": true,
+    "usePlaceholders": true
+  }
 }

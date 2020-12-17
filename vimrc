@@ -67,6 +67,10 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
 let g:go_def_mapping_enabled = 0
+let g:go_fmt_command = "golines"
+let g:go_fmt_options = {
+    \ 'golines': '-m 80',
+    \ }
 "-----------------------------------------------------------------------------
 " vim-flow
 "-----------------------------------------------------------------------------
@@ -240,10 +244,6 @@ let g:ale_linters = {
 " TextEdit might fail if hidden is not set.
 set hidden
 
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
 " Give more space for displaying messages.
 set cmdheight=2
 
@@ -281,7 +281,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window.
+" Use L to show documentation in preview window.
 nnoremap <silent> L :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
