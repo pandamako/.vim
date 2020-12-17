@@ -19,5 +19,5 @@
   "flow.pathToFlow": "node_modules/.bin/flow",
   "javascript.validate.enable": false,
   "tsserver.enable": true,
-  "go.goplsPath": "~/.go/bin/gopls"
+  "go.goplsPath": "/Users/artembykov/.go/bin/gopls"
 }
