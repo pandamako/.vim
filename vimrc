@@ -69,7 +69,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "golines"
 let g:go_fmt_options = {
-    \ 'golines': '-m 80',
+    \ 'golines': '-m 90',
     \ }
 "-----------------------------------------------------------------------------
 " vim-flow
@@ -282,6 +282,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use L to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <silent> L :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
