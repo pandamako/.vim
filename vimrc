@@ -69,7 +69,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "golines"
 let g:go_fmt_options = {
-    \ 'golines': '-m 90',
+    \ 'golines': '-m 80',
     \ }
 "-----------------------------------------------------------------------------
 " vim-flow
