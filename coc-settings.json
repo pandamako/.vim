@@ -12,8 +12,13 @@
     "golang": {
       "command": "gopls",
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "disableWorkspaceFolders": true,
-      "filetypes": ["go"]
+      "disableWorkspaceFolders": false,
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "completeUnimported": true,
+        "usePlaceholders": true,
+        "verboseOutput": true
+      }
     }
   },
   "flow.pathToFlow": "node_modules/.bin/flow",
@@ -23,6 +28,7 @@
   "go.goplsArgs": ["-remote=auto", "-logfile", "/tmp/gopls.log"],
   "go.goplsOptions": {
     "completeUnimported": true,
-    "usePlaceholders": true
+    "usePlaceholders": true,
+    "verboseOutput": true
   }
 }
