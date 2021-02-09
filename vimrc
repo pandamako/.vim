@@ -66,11 +66,17 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 "-----------------------------------------------------------------------------
 " disable vim-go :GoDef short cut (gd)
 " this is handled by LanguageClient [LC]
-let g:go_def_mapping_enabled = 0
+" let g:go_def_mapping_enabled = 0
 let g:go_fmt_command = "golines"
 let g:go_fmt_options = {
     \ 'golines': '-m 80',
     \ }
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
+let g:go_gopls_complete_unimported=v:true
+let g:go_gopls_deep_completion=v:true
+let g:go_gopls_matcher='fuzzy'
+let g:go_gopls_use_placeholders=v:true
 "-----------------------------------------------------------------------------
 " vim-flow
 "-----------------------------------------------------------------------------
